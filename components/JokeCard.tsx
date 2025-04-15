@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const JokeCard = ({ joke, onFavorite, isFavorited }: Props) => {
-  const category = (joke as any).categories?.[0];
+  const category = (joke as Joke).categories?.[0];
   return (
     <Card className="relative mb-4">
       <CardContent className="p-5">

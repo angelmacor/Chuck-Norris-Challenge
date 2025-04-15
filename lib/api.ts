@@ -11,26 +11,29 @@ export const fetchRandomJoke = async (): Promise<Joke> => {
 
 export const searchJokes = async (query?: string): Promise<Joke[]> => {
   const url = query
-  ? `${URL_BASE}/search?query=${query}`
-  : `${URL_BASE}/random`;
+    ? `${URL_BASE}/search?query=${query}`
+    : `${URL_BASE}/random`;
   const res = await fetch(url);
   try {
     if (!res.ok) throw new Error("Search failed");
     const data = await res.json();
 
     if (!data.result || data.result.length === 0) {
-        return [data.value ? data : 
+      return [data.value ? data :
         {
-            id: "not-found",
-            value: "Chuck Norris didn't like your search 😢, his API refuses to return anything ❌",
-            url: "",
-            categories: [],
+          id: "not-found",
+          value: "Chuck Norris didn't like your search 😢, his API refuses to return anything ❌",
+          url: "",
+          categories: [],
         },
-        ];
+      ];
     }
 
     return data.result;
-    } catch (err: any) {
-    throw new Error(err?.message || "Something went wrong searching jokes");
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      throw new Error(err.message || "Something went wrong searching jokes");
+    }
+    throw new Error("Something went wrong searching jokes");
   }
 };

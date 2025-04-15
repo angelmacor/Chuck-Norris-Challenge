@@ -1,112 +1,139 @@
-# Chuck Norris Jokes App
+# 🦾 Chuck Norris Jokes App
 
-## Descripción
+## 📖 Description
+This web application displays Chuck Norris jokes using the public API chucknorris.io. Users can search for jokes, mark them as favorites, and rate them with a star system.
 
-Esta aplicación web muestra chistes de Chuck Norris utilizando la API pública [chucknorris.io](https://api.chucknorris.io). Permite a los usuarios buscar chistes, guardarlos como favoritos y calificarlos con un sistema de estrellas.
+## ✨ Features
+- **Home Page**: Displays random jokes and allows searching by keyword
+- **Favorites System**: Save your favorite jokes for later
+- **Ratings**: Rate your favorite jokes from 1 to 5 stars
+- **Sorting**: Sort favorite jokes by rating
+- **Dark/Light Mode**: Toggle between light and dark themes
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
 
-## Características
+## ⚙️ Technologies Used
+- **Next.js 15**: React framework for server-side rendering and routing
+- **React 19**: Library for building user interfaces
+- **TypeScript**: Strongly-typed superset of JavaScript
+- **Tailwind CSS**: Utility-first CSS framework for rapid design
+- **Lucide React**: Icon set based on Lucide SVG icons
+- **next-themes**: Theme switching support for Next.js
+- **Sonner**: Toast notification system
 
-- **Página de inicio**: Muestra chistes aleatorios y permite buscar chistes por palabras clave
-- **Sistema de favoritos**: Guarda tus chistes preferidos para verlos más tarde
-- **Calificación**: Califica tus chistes favoritos con un sistema de 1 a 5 estrellas
-- **Ordenación**: Ordena tus chistes favoritos por calificación
-- **Tema claro/oscuro**: Cambia entre tema claro y oscuro según tus preferencias
-- **Diseño responsive**: Interfaz adaptable a diferentes dispositivos
-
-## Tecnologías utilizadas
-
-- **Next.js 15**: Framework de React para renderizado del lado del servidor
-- **React 19**: Biblioteca para construir interfaces de usuario
-- **TypeScript**: Superset tipado de JavaScript
-- **Tailwind CSS**: Framework CSS para diseño rápido y responsivo
-- **Lucide React**: Conjunto de iconos SVG para React
-- **next-themes**: Soporte para temas en aplicaciones Next.js
-- **Sonner**: Biblioteca para notificaciones toast
-
-## Estructura del proyecto
-
-```
-/app                  # Páginas de la aplicación (Next.js App Router)
-  /favorites          # Página de chistes favoritos
-  /page.tsx           # Página principal
-  /layout.tsx         # Diseño principal de la aplicación
-/components           # Componentes reutilizables
-  /ui                 # Componentes de interfaz de usuario
-  /JokeCard.tsx       # Tarjeta para mostrar chistes
-  /SidebarNavigation  # Navegación lateral
-/lib                  # Utilidades y funciones
-  /api.ts             # Funciones para interactuar con la API
-  /localStorage.ts     # Funciones para manejar el almacenamiento local
-/types                # Definiciones de tipos TypeScript
-/public               # Archivos estáticos
+## 📁 Project Structure
+```bash
+/app                  # Application pages (Next.js App Router)
+  /favorites          # Favorites page
+  /page.tsx           # Main page
+  /layout.tsx         # Global layout
+/components           # Reusable components
+  /ui                 # UI components (shadcn)
+  /JokeCard.tsx       # Joke display card
+  /SidebarNavigation  # Sidebar navigation
+/lib                  # Utilities and logic
+  /api.ts             # Functions for interacting with the API
+  /localStorage.ts    # Local storage utilities
+/types                # TypeScript type definitions
+/public               # Static assets
 ```
 
-## Instalación
+## 🚀 Installation
+1. Clone the repository:
+```bash
+git clone <repo-url>
+cd .
+```
 
-1. Clona este repositorio:
-   ```bash
-   git clone <url-del-repositorio>
-   cd greencode
-   ```
+2. Install dependencies:
+```bash
+pnpm install
+# or
+npm install
+# or
+yarn install
+```
 
-2. Instala las dependencias:
-   ```bash
-   npm install
-   # o
-   yarn install
-   # o
-   pnpm install
-   ```
+3. Start the development server:
+```bash
+pnpm dev
+# or
+npm run dev
+# or
+yarn dev
+```
 
-3. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   # o
-   yarn dev
-   # o
-   pnpm dev
-   ```
-   > Nota: El proyecto utiliza Turbopack para un desarrollo más rápido
+4. Open http://localhost:3000 in your browser
+> Note: The project uses Turbopack for faster development
 
-4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación
+## 🧑‍💻 Usage
+- On the homepage, you can view a random joke or search using keywords
+- Click the heart icon to mark a joke as favorite
+- Visit the Favorites page to view your saved jokes
+- Rate your favorites with 1–5 stars
+- Use the sort button to order favorites by rating
+- Toggle light/dark mode using the button at the bottom right
 
-## Uso
+## 📡 API
+This project uses the public Chuck Norris API via /lib/api.ts:
+- fetchRandomJoke(category?): Get a random joke, optionally by category
+- searchJokes(query, category?): Search jokes by text (and optionally filter by category)
 
-- En la página principal, puedes ver un chiste aleatorio o buscar chistes por palabras clave
-- Haz clic en el icono de corazón para guardar un chiste como favorito
-- Navega a la página de favoritos para ver tus chistes guardados
-- Califica tus chistes favoritos con el sistema de estrellas
-- Utiliza el botón de ordenación para ordenar tus chistes por calificación
-- Cambia entre tema claro y oscuro con el botón en la esquina inferior derecha
+## 💾 Data Persistence
+- Favorite jokes and ratings are stored in localStorage
+- No backend is needed — everything is saved in the browser
 
-## API
+## 💻 System Requirements
+- Node.js 18.0.0 or higher
+- pnpm, npm, or yarn as a package manager
+- Docker (optional, for containerized environments)
 
-Esta aplicación utiliza la API pública de [chucknorris.io](https://api.chucknorris.io) para obtener los chistes. Las principales funciones de la API se encuentran en `/lib/api.ts`:
+## 🔧 Implementation Notes
+- **App Router**: Uses Next.js 15 App Router for modern routing and layout management
+- **Client/Server Components**: Clear separation to optimize initial load
+- **Atomic Design**: UI components follow atomic design principles
+- **Local Storage Only**: No backend required; runs entirely in the browser
+- **Mobile-First Design**: Tailwind CSS ensures responsiveness
+- **Accessibility**: Built with Radix UI principles for accessible components
 
-- `fetchRandomJoke()`: Obtiene un chiste aleatorio
-- `searchJokes(query)`: Busca chistes por palabras clave
+## 📜 Available Scripts
+- **pnpm dev**: Start development server with Turbopack
+- **pnpm build**: Build the app for production
+- **pnpm start**: Run the production server
+- **pnpm lint**: Run linter checks
 
-## Almacenamiento
+## 🐳 Run with Docker
+You can run the app in a containerized environment using Docker and Docker Compose.
 
-Los chistes favoritos y las calificaciones se almacenan en el localStorage del navegador, lo que permite que persistan entre sesiones sin necesidad de un backend.
+### Prerequisites
+- Docker installed
+- Docker Compose installed
 
-## Requisitos del sistema
+### Steps
+1. Clone the repo (if not done already):
+```bash
+git clone <repo-url>
+cd greencode
+```
 
-- Node.js 18.0.0 o superior
-- npm, yarn o pnpm como gestor de paquetes
+2. Run with Docker Compose:
+```bash
+docker-compose up
+```
 
-## Notas de implementación
+3. Run in detached mode:
+```bash
+docker-compose up -d
+```
 
-- **App Router de Next.js**: Se utiliza el nuevo sistema de enrutamiento de Next.js 15 para una mejor organización del código y rendimiento.
-- **Componentes de servidor y cliente**: Separación clara entre componentes que se ejecutan en el servidor y en el cliente para optimizar la carga inicial.
-- **Patrón de diseño atómico**: Los componentes UI están organizados siguiendo principios de diseño atómico para mayor reusabilidad.
-- **Almacenamiento local**: Se eligió localStorage para mantener la aplicación sin dependencias de backend, facilitando su despliegue y uso.
-- **Diseño responsive**: Implementado con Tailwind CSS siguiendo el enfoque mobile-first.
-- **Accesibilidad**: Componentes de Radix UI para garantizar una experiencia accesible para todos los usuarios.
+4. Stop the application:
+```bash
+docker-compose down
+```
 
-## Scripts disponibles
+5. Open http://localhost:3000 to view the app
 
-- `npm run dev`: Inicia el servidor de desarrollo con Turbopack
-- `npm run build`: Construye la aplicación para producción
-- `npm run start`: Inicia la aplicación en modo producción
-- `npm run lint`: Ejecuta el linter para verificar la calidad del código
+### 🐋 Docker Configuration
+The project includes:
+- **Dockerfile**: Defines the base image, dependencies, and runtime
+- **docker-compose.yml**: Configures the service, ports, volumes, and environment
+- **.dockerignore**: Excludes unnecessary files from the Docker image
