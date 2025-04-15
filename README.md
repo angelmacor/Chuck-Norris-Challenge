@@ -117,7 +117,7 @@ You can run the app in a containerized environment using Docker and Docker Compo
 1. Clone the repo (if not done already):
 ```bash
 git clone <repo-url>
-cd greencode
+cd .
 ```
 
 2. Run with Docker Compose:
