@@ -3,6 +3,11 @@
 ## 📖 Description
 This web application displays Chuck Norris jokes using the public API chucknorris.io. Users can search for jokes, mark them as favorites, and rate them with a star system.
 
+## User Data Storage
+
+This application does not require user login. All favorite jokes and ratings are stored locally in the browser using `localStorage`. This ensures a quick and simple user experience, but data will only persist on the same device and browser.
+
+
 ## ✨ Features
 - **Home Page**: Displays random jokes and allows searching by keyword
 - **Favorites System**: Save your favorite jokes for later
