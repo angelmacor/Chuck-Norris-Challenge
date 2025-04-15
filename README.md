@@ -46,7 +46,7 @@ This application does not require user login. All favorite jokes and ratings are
 1. Clone the repository:
 ```bash
 git clone <repo-url>
-cd .
+cd . 
 ```
 
 2. Install dependencies:
